@@ -278,7 +278,7 @@ public class EndPointMobileApp implements Filter {
 			 employer = employerBo.registerEmployer(employer);
 			 logger.info("------------ After Register Employee BO Calling -------------");
 		 }catch(Exception e) {
-			 System.out.println("[UI] RegisterEmp Exception ---------->"+e.getMessage()); 
+			 System.out.println("[MobileApp] RegisterEmp Exception ---------->"+e.getMessage()); 
 		 }
 		 finally {
 			 
@@ -352,7 +352,7 @@ public class EndPointMobileApp implements Filter {
 		    member.setSequanceNumber(temp); 
 			this.hotelList = bo1.getCountryInfo(member,hotelList,ImagePath);
 		}catch(Exception e){
-			logger.info("UI Application Exception -->"+e.getMessage());
+			logger.info("MobileApp getCompany Exception -->"+e.getMessage());
 		}
 		finally{
 			
@@ -496,7 +496,7 @@ public class EndPointMobileApp implements Filter {
 		}catch(Exception e){
 			e.printStackTrace();
 		}	
-		return gson.toJson(member.getStatus());
+		return gson.toJson(member);
 	}
 	
 	//--------- get My Member List View ----------
@@ -645,8 +645,8 @@ public class EndPointMobileApp implements Filter {
 	{
 		System.out.println("------ Inside changePassword Method Calling -----------");
 		Gson gson = new Gson();	
-		logger.info("[UI Application-resetPassword] New Password ---------------->"+newPassword1);
-		logger.info("[UI Application-resetPassword] User Name ---------------->"+forgetUser);
+		logger.info("[MobileApp-resetPassword] New Password ---------------->"+newPassword1);
+		logger.info("[MobileApp-resetPassword] User Name ---------------->"+forgetUser);
 		try {
 			user = new User();
 			user.setPassword(newPassword1);
