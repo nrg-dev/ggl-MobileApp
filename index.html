@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<link type="text/css" rel="stylesheet" href="css/loginPage1.css" />
+		<link type="text/css" rel="stylesheet" href="css/loginPage2.css" />
+		<script src="resource/js/jquery.min.js "></script>
+		<script src="resource/js/ajaxJquery.min.js"></script>
+		<script src="resource/js/bootstrapDialog.js"></script>
+		<script src="js/login.js"></script>
+		<link rel="stylesheet" href="css/home.css">
+	</head>
+	<body class="login-body">
+		<div data-role="header" id="header" class="w3-card-2">
+			  <table style="width:100%">
+				<tr>
+					<td> 
+						<img src="images/logo.jpg" style="width:60px;height:60px;" class="imagecontainer"></img>
+					</td>
+					<td>
+						<h1 style="margin-top:7px;font-size:14px;color:white;margin-left: 45px;">
+							<b>GGL</b>
+						</h1>
+					</td>
+					<td></td>
+												
+				</tr>
+			  </table> 
+		</div>
+		<br/>
+        <div class="login-panel1 ui-fluid">   
+			<div class="ui-g login-container1" style="margin-top: 25px;">
+				<!-- <div class="ui-g-12">	
+					<img src="images/login.png" id="imageContainer" />
+				</div> -->  			
+				<div class="ui-g-12">
+					<h2 style="color:black;font-size:25px;margin-bottom:-2px;">Member Login</h2>
+				</div>
+                <div class="ui-g-12">
+					<input id="username" name="username" type="text" required  placeholder="Username" class="ui-inputfield ui-inputtext ui-widget ui-state-default ui-corner-all" />
+                </div><p class="error" id="usererr" />
+                <div class="ui-g-12">
+					<input id="password" name="password" type="password" required class="ui-inputfield ui-password ui-widget ui-state-default ui-corner-all" placeholder="Password" /> 
+				</div><p class="error" id="pwderr" />
+                <div class="ui-g-12 button-container">
+					<button id="signin" name="signin" type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-icon-left signin-btn raised-btn" 
+					onclick="login()"><span class="ui-button-text ui-c">Log In</span></button>
+					<br><br/>
+					<button id="register" name="register" type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-icon-left signin-btn raised-btn" 
+						onclick="location.href='Register.html'"><span class="ui-button-text ui-c">Register</span></button>
+					<br><br/>
+				</div>
+				<div class="ui-g-12">
+					<div class="ui-g-6">
+						<a href="forgetpassword.html" style="font-size:12px;">Forget Password</a>
+					</div>
+					<div class="ui-g-5">
+						<a href="#" style="font-size:12px;">Payment Upload</a>
+					</div>
+				</div>
+            </div>  	
+			<div class="ajax-loader">
+				<img src="images/loading.gif" class="img-responsive" />
+			</div>
+		 </div>	   
+	</body>
+</html>

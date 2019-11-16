@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>Member | Dashboard</title>
+		<!-- Tell the browser to be responsive to screen width -->
+		<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+		<!-- Bootstrap 3.3.7 -->
+		<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+		<!-- Font Awesome -->
+		<link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
+		<!-- Theme style -->
+		<link rel="stylesheet" href="dist/css/AdminLTE.min.css">
+		<link rel="stylesheet" href="dist/css/skins/_all-skins.min.css">
+		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="css/text.css">
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" href="resource/css/bootstrap.min.css">
+	  <!-- Google Font -->
+	</head>
+	<body class="hold-transition skin-blue sidebar-mini">
+		<div class="wrapper" style="cursor:pointer;">
+
+		  <header class="main-header">
+			<a href="dashboard.html" class="logo">
+			  <span class="logo-mini"><b>User</b></span>
+			  <span class="logo-lg"><b>Member</b></span>
+			</a>
+			<nav class="navbar navbar-static-top">
+			  <!-- Sidebar toggle button-->
+			  <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+				<span class="sr-only">Toggle navigation</span>
+			  </a>
+			</nav>
+		  </header>
+		  <!-- Left side column. contains the logo and sidebar -->
+		  <aside class="main-sidebar">
+			<!-- sidebar: style can be found in sidebar.less -->
+			<section class="sidebar">
+			  <!-- Sidebar user panel -->
+			  <div class="user-panel" onclick="getCompanyList()">
+				<div class="pull-left image">
+				  <img src="images/home.png" class="img-circle" alt="User Image">
+				</div>
+				<div class="pull-left info">
+				  <p>Member Home</p>
+				  <a><i class="fa fa-circle text-success"></i> Online</a>
+				</div>
+			  </div>
+			  <!-- search form -->
+			  <form action="#" method="get" class="sidebar-form">
+				<div class="input-group">
+				  <input type="text" name="q" class="form-control" placeholder="Search...">
+				  <span class="input-group-btn">
+						<button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
+						</button>
+					  </span>
+				</div>
+			  </form>
+			  <!-- /.search form -->
+			  <ul class="sidebar-menu" data-widget="tree">
+				<!-- <li class="header">MAIN NAVIGATION</li> -->
+				<li>
+				  <a href="MyProfile.html">
+					<i class="fa fa-user-md"></i> <span>My Profile</span>       
+				  </a>
+				</li>
+				<li>
+				  <a href="Withdraw.html">
+					<i class="fa fa-money"></i> <span>Withdraw</span>   
+				  </a>
+				</li>
+				<li>
+				  <a href="MyMember.html">
+					<i class="fa fa-users"></i> <span>My GLG Member</span>   
+				  </a>
+				</li>
+				<li class="treeview">
+				  <a href="#">
+					<i class="fa fa-sort-amount-desc"></i> <span>Investment</span>
+					<span class="pull-right-container">
+					  <i class="fa fa-angle-left pull-right"></i>
+					</span>
+				  </a>
+				  <ul class="treeview-menu">
+					<li><a href="purchaseUnit.html"><i class="fa fa-shopping-cart"></i> Purchase Unit </a></li>
+					<li><a href="myStatus.html"><i class="fa fa-address-book"></i> My Status </a></li>
+					<li><a href="memberPayment.html"><i class="fa fa-shopping-cart"></i> Payment Options </a></li>
+					<li><a href="investment-paymentupload.html"><i class="fa fa-shopping-cart"></i> Upload Payment </a></li>
+				  </ul>
+				</li>
+				<li class="treeview">
+				  <a href="#">
+					<i class="fa fa-list-ul"></i> <span>Booking</span>
+					<span class="pull-right-container">
+					  <i class="fa fa-angle-left pull-right"></i>
+					</span>
+				  </a>
+				  <ul class="treeview-menu">
+					<li><a href="MyBooking.html"><i class="fa fa-table"></i> My Booking </a></li>
+				  </ul>
+				</li>
+				<li>
+				  <a href="index.html">
+					<i class="fa fa-sign-out"></i> <span>Log Out</span>   
+				  </a>
+				</li>
+			  </ul>
+			</section>
+			<!-- /.sidebar -->
+		  </aside>
+
+		  <!-- Content Wrapper. Contains page content -->
+		  <br/><br/><br/><br/><br/>
+		  <div class="content-wrapper">
+			<section class="content-header" id="scroll">
+				<!-- Profile View Start -->
+				<div class="container-fluid" id="profileview">
+					<div class="row">
+						<div class="col-sm-12 col-md-12 col-xs-12 col-lg-5">
+							<h3><center>My Profile View</h3></center>
+						</div>				
+					</div><br/>
+					<div class="row">
+						  <div class="col-sm-12 col-md-12 col-xs-12 col-lg-12">
+							<div class="col-sm-5 col-md-5  col-xs-5 col-lg-2" ></div>
+							 <div class="col-sm-2 col-md-2  col-xs-2 col-lg-1"></div>
+							 <div class="col-sm-5 col-md-5  col-xs-5 col-lg-5">
+								<button type="button" class="btn btn-primary" onclick="profileEdit()">Edit</button>
+								<!-- <a onclick="profileEdit()" style="font-size: 20px;">Edit</a> -->
+							 </div>						 
+						  </div>				
+					</div><br/>
+					<div class="row">
+						<div class="col-sm-12 col-md-12 col-xs-12 col-lg-12">
+							<div class="col-sm-5 col-md-5  col-xs-5 col-lg-2">
+								<label class="name">User Name</label>
+							</div>
+							<div class="col-sm-2 col-md-2  col-xs-2 col-lg-1">
+								<label class="name">:</label>
+							</div>
+							<div class="col-sm-5 col-md-5  col-xs-5 col-lg-5">
+								<output id="username" style="padding-top:0px;"></output>
+							</div>						 
+						</div>				
+					</div><br/>
+					<div class="row" style="margin-top:-16px;">
+						<div class="col-sm-12 col-md-12 col-xs-12 col-lg-12">
+							<div class="col-sm-5 col-md-5  col-xs-5 col-lg-2">
+								<label class="name">First Name</label>
+							 </div>
+							 <div class="col-sm-2 col-md-2  col-xs-2 col-lg-1">
+								<label class="name">:</label>
+							 </div>
+							 <div class="col-sm-5 col-md-5  col-xs-5 col-lg-5">
+								<output id="firstname" style="padding-top:0px;"></output>
+							 </div>						 
+						 </div>				
+					</div>
+					<div class="row" style="margin-top:6px;">
+						<div class="col-sm-12 col-md-12 col-xs-12 col-lg-12">
+							<div class="col-sm-5 col-md-5  col-xs-5 col-lg-2">
+								<label class="name">Last Name</label>
+							 </div>
+							 <div class="col-sm-2 col-md-2  col-xs-2 col-lg-1">
+								<label class="name">:</label>
+							 </div>
+							 <div class="col-sm-5 col-md-5  col-xs-5 col-lg-5">
+								<output id="lastname" style="padding-top:0px;"></output>
+							 </div>						 
+						</div>				
+					</div>
+					<div class="row" style="margin-top:6px;">
+						<div class="col-sm-12 col-md-12 col-xs-12 col-lg-12">
+							<div class="col-sm-5 col-md-5  col-xs-5 col-lg-2">
+								<label class="name">Member ID</label>
+							 </div>
+							 <div class="col-sm-2 col-md-2  col-xs-2 col-lg-1">
+								<label class="name">:</label>
+							 </div>
+							 <div class="col-sm-5 col-md-5  col-xs-5 col-lg-5">
+								<output id="memberID" style="padding-top:0px;"></output>
+							 </div>						 
+						</div>				
+					</div>
+					<div class="row" style="margin-top:6px;">
+						<div class="col-sm-12 col-md-12 col-xs-12 col-lg-12">
+							<div class="col-sm-5 col-md-5  col-xs-5 col-lg-2">
+								<label class="name">Member Type</label>
+							 </div>
+							 <div class="col-sm-2 col-md-2  col-xs-2 col-lg-1">
+								<label class="name">:</label>
+							 </div>
+							 <div class="col-sm-5 col-md-5  col-xs-5 col-lg-5">
+								<output id="membertype" style="padding-top:0px;"></output>
+							 </div>						 
+						</div>				
+					</div>
+					<div class="row" style="margin-top:6px;">
+						<div class="col-sm-12 col-md-12 col-xs-12 col-lg-12">
+							<div class="col-sm-5 col-md-5  col-xs-5 col-lg-2">
+								<label class="name">Bank Name</label>
+							 </div>
+							 <div class="col-sm-2 col-md-2  col-xs-2 col-lg-1">
+								<label class="name">:</label>
+							 </div>
+							 <div class="col-sm-5 col-md-5  col-xs-5 col-lg-5">
+								<output id="bankname" style="padding-top:0px;"></output>
+							 </div>						 
+						</div>				
+					</div>
+					<div class="row" style="margin-top:6px;">
+						<div class="col-sm-12 col-md-12 col-xs-12 col-lg-12">
+							<div class="col-sm-5 col-md-5  col-xs-5 col-lg-2">
+								<label class="name">A/C Number</label>
+							 </div>
+							 <div class="col-sm-2 col-md-2  col-xs-2 col-lg-1">
+								<label class="name">:</label>
+							 </div>
+							 <div class="col-sm-5 col-md-5  col-xs-5 col-lg-5">
+								<output id="accountNumber" style="padding-top:0px;"></output>
+							 </div>						 
+						</div>				
+					</div>
+					<div class="row" style="margin-top:6px;">
+						<div class="col-sm-12 col-md-12 col-xs-12 col-lg-12">
+							<div class="col-sm-5 col-md-5  col-xs-5 col-lg-2">
+								<label class="name">Phone Number</label>
+							 </div>
+							 <div class="col-sm-2 col-md-2  col-xs-2 col-lg-1">
+								<label class="name">:</label>
+							 </div>
+							 <div class="col-sm-5 col-md-5  col-xs-5 col-lg-5">
+								<output id="phoneNumber" style="padding-top:0px;"></output>
+							 </div>						 
+						</div>				
+					</div>
+					<div class="row" style="margin-top:6px;">
+						<div class="col-sm-12 col-md-12 col-xs-12 col-lg-12">
+							<div class="col-sm-5 col-md-5  col-xs-5 col-lg-2">
+								<label class="name">Email</label>
+							 </div>
+							 <div class="col-sm-2 col-md-2  col-xs-2 col-lg-1">
+								<label class="name">:</label>
+							 </div>
+							 <div class="col-sm-5 col-md-5  col-xs-5 col-lg-5">
+								<output id="email" style="padding-top:0px;"></output>
+							 </div>						 
+						</div>				
+					</div>
+					<div class="row" style="margin-top:6px;">
+						<div class="col-sm-12 col-md-12 col-xs-12 col-lg-12">
+							<div class="col-sm-5 col-md-5  col-xs-5 col-lg-2">
+								<label class="name">Country</label>
+							 </div>
+							 <div class="col-sm-2 col-md-2  col-xs-2 col-lg-1">
+								<label class="name">:</label>
+							 </div>
+							 <div class="col-sm-5 col-md-5  col-xs-5 col-lg-5">
+								<output id="country" style="padding-top:0px;"></output>
+							 </div>						 
+						</div>				
+					</div>
+					<div class="row" style="margin-top:6px;">
+						<div class="col-sm-12 col-md-12 col-xs-12 col-lg-12">
+							<div class="col-sm-5 col-md-5  col-xs-5 col-lg-2">
+								<label class="name">Commission</label>
+							 </div>
+							 <div class="col-sm-2 col-md-2  col-xs-2 col-lg-1">
+								<label class="name">:</label>
+							 </div>
+							 <div class="col-sm-5 col-md-5  col-xs-5 col-lg-5">
+								<output id="memberCommition" style="padding-top:0px;"></output>
+							 </div>						 
+						</div>				
+					</div>
+					<div class="row" style="margin-top:6px;">
+						<div class="col-sm-12 col-md-12 col-xs-12 col-lg-12">
+							<div class="col-sm-5 col-md-5  col-xs-5 col-lg-2">
+								<label class="name">Overriding</label>
+							 </div>
+							 <div class="col-sm-2 col-md-2  col-xs-2 col-lg-1">
+								<label class="name">:</label>
+							 </div>
+							 <div class="col-sm-5 col-md-5  col-xs-5 col-lg-5">
+								<output id="memberOvrriding" style="padding-top:0px;"></output>
+							 </div>						 
+						  </div>				
+					</div>
+					<div class="row" style="margin-top:6px;">
+						<div class="col-sm-12 col-md-12 col-xs-12 col-lg-12">
+							<div class="col-sm-5 col-md-5  col-xs-5 col-lg-2">
+								<label class="name">Group Name</label>
+							 </div>
+							 <div class="col-sm-2 col-md-2  col-xs-2 col-lg-1">
+								<label class="name">:</label>
+							 </div>
+							 <div class="col-sm-5 col-md-5  col-xs-5 col-lg-5">
+								<output id="groupName" style="padding-top:0px;"></output>
+							 </div>						 
+						</div>				
+					</div>
+				</div>
+				<!-- Profile View End -->
+				
+				<div class="modal fade bd-example-modal-lg" id="editModal" tabindex="-1" role="dialog"  aria-hidden="true" data-backdrop="static" data-keyboard="false">
+					<div class="modal-dialog modal-lg" role="document" style="padding-top:8px;">
+						<div class="modal-content">
+						  <br/><br/><br/><br/>
+						  <div class="modal-header">
+							<button type="button" id="close" data-dismiss="modal" aria-label="Close">
+							  <span aria-hidden="true"><i class="fa fa-times"></i></span>
+							</button>
+							<h5 class="modal-title" id="exampleModalLabel" style="color:white;font-size: 20px;">My Profile Edit</h5>		
+						  </div>
+						  <div class="modal-body">
+							<div class="container-fluid">
+								<div class="row">
+								  <div class="col-sm-12 col-md-12 col-xs-12 col-lg-12">
+									<div class="col-sm-3 col-md-5  col-xs-5 col-lg-2">
+										<label class="proname">User Name</label>
+									 </div>
+									 <div class="col-sm-2 col-md-2  col-xs-2 col-lg-1">
+										<label class="proname">:</label>
+									 </div>
+									 <div class="col-sm-5 col-md-5  col-xs-5 col-lg-5">
+										<output id="eusername" style="padding-top:0px;"></output>
+									 </div>						 
+								  </div>
+								</div>			  
+								<div class="row" style="margin-top:8px;">
+								  <div class="col-sm-12 col-md-12 col-xs-12 col-lg-12">
+									<div class="col-sm-3 col-md-5  col-xs-5 col-lg-2">
+										<label class="proname">Member ID</label>
+									 </div>
+									 <div class="col-sm-2 col-md-2  col-xs-2 col-lg-1">
+										<label class="name">:</label>
+									 </div>
+									 <div class="col-sm-5 col-md-5  col-xs-5 col-lg-5">
+										<output id="emembernumber" style="padding-top:0px;"></output>
+									 </div>						 
+								  </div>				
+								</div>
+								<div class="row" style="margin-top:8px;">
+								  <div class="col-sm-12 col-md-12 col-xs-12 col-lg-12">
+									<div class="col-sm-3 col-md-5  col-xs-5 col-lg-2">
+										<label class="proname">Member Type</label>
+									 </div>
+									 <div class="col-sm-2 col-md-2  col-xs-2 col-lg-1">
+										<label class="name">:</label>
+									 </div>
+									 <div class="col-sm-5 col-md-5  col-xs-5 col-lg-5">
+										<output id="emembertype" style="padding-top:0px;"></output>
+									 </div>						 
+								  </div>				
+								</div>
+								<div class="row" style="margin-top:6px;">
+									<div class="col-sm-12 col-md-12 col-xs-12 col-lg-12">
+										<div class="col-sm-3 col-md-5  col-xs-5 col-lg-2">
+											<label class="proname">Commission</label>
+										 </div>
+										 <div class="col-sm-2 col-md-2  col-xs-2 col-lg-1">
+											<label class="name">:</label>
+										 </div>
+										 <div class="col-sm-5 col-md-5  col-xs-5 col-lg-5">
+											<output id="ememberCommition" style="padding-top:0px;"></output>
+										 </div>						 
+									</div>				
+								</div>
+								<div class="row" style="margin-top:6px;">
+									<div class="col-sm-12 col-md-12 col-xs-12 col-lg-12">
+										<div class="col-sm-3 col-md-5  col-xs-5 col-lg-2">
+											<label class="proname">Overriding</label>
+										 </div>
+										 <div class="col-sm-2 col-md-2  col-xs-2 col-lg-1">
+											<label class="name">:</label>
+										 </div>
+										 <div class="col-sm-5 col-md-5  col-xs-5 col-lg-5">
+											<output id="ememberOvrriding" style="padding-top:0px;"></output>
+										 </div>						 
+									  </div>				
+								</div>
+								<div class="row" style="margin-top:6px;">
+									<div class="col-sm-12 col-md-12 col-xs-12 col-lg-12">
+										<div class="col-sm-3 col-md-5  col-xs-5 col-lg-2">
+											<label class="proname">Group Name</label>
+										 </div>
+										 <div class="col-sm-2 col-md-2  col-xs-2 col-lg-1">
+											<label class="name">:</label>
+										 </div>
+										 <div class="col-sm-5 col-md-5  col-xs-5 col-lg-5">
+											<output id="egroupName" style="padding-top:0px;"></output>
+										 </div>						 
+									</div>				
+								</div>
+								<div class="row" style="margin-top:8px;">
+								  <div class="col-sm-12 col-md-12 col-xs-12 col-lg-12">
+									<div class="col-sm-3 col-md-5  col-xs-5 col-lg-2">
+										<label class="proname">First Name</label>
+									 </div>
+									 <div class="col-sm-2 col-md-2  col-xs-2 col-lg-1">
+										<label class="name">:</label>
+									 </div>
+									 <div class="col-sm-5 col-md-5  col-xs-5 col-lg-5">
+										<input type="text" class="form-control input-sm" id="efirstname" value="firstname" style="height:25px;width:125%;"></input>
+									 </div>	
+									<p class="perror" id="firstnameerror"></p>					 
+								  </div>				
+								</div>
+								<div class="row" style="margin-top:8px;">
+								  <div class="col-sm-12 col-md-12 col-xs-12 col-lg-12">
+									<div class="col-sm-3 col-md-5  col-xs-5 col-lg-2">
+										<label class="proname">Last Name</label>
+									 </div>
+									 <div class="col-sm-2 col-md-2  col-xs-2 col-lg-1">
+										<label class="name">:</label>
+									 </div>
+									 <div class="col-sm-5 col-md-5  col-xs-5 col-lg-5">
+										<input type="text" class="form-control input-sm" id="elastname" value="lastname"  style="height:25px;width:125%;"></input>
+									 </div>						 
+								  </div>				
+								</div>
+								<div class="row" style="margin-top:8px;">
+								  <div class="col-sm-12 col-md-12 col-xs-12 col-lg-12">
+									<div class="col-sm-3 col-md-5  col-xs-5 col-lg-2">
+										<label class="proname">Bank Name</label>
+									 </div>
+									 <div class="col-sm-2 col-md-2  col-xs-2 col-lg-1">
+										<label class="name">:</label>
+									 </div>
+									 <div class="col-sm-5 col-md-5  col-xs-5 col-lg-5">
+										<input type="text" class="form-control input-sm" id="ebankname" value="bankname"  style="height: 25px;width:125%;"></input>
+									 </div>						 
+								  </div>				
+								</div>
+								<div class="row" style="margin-top:8px;">
+								  <div class="col-sm-12 col-md-12 col-xs-12 col-lg-12">
+									<div class="col-sm-3 col-md-5  col-xs-5 col-lg-2">
+										<label class="proname">A/C Number</label>
+									 </div>
+									 <div class="col-sm-2 col-md-2  col-xs-2 col-lg-1">
+										<label class="name">:</label>
+									 </div>
+									 <div class="col-sm-5 col-md-5  col-xs-5 col-lg-5">
+										<input type="text" class="form-control input-sm" id="eaccountNumber" value="accountNumber"  style="height: 25px;width:125%;"></input>
+									 </div>						 
+								  </div>				
+								</div>
+								<div class="row" style="margin-top:8px;">
+								  <div class="col-sm-12 col-md-12 col-xs-12 col-lg-12">
+									<div class="col-sm-3 col-md-5  col-xs-5 col-lg-2">
+										<label class="proname">Phone No</label>
+									 </div>
+									 <div class="col-sm-2 col-md-2  col-xs-2 col-lg-1">
+										<label class="name">:</label>
+									 </div>
+									 <div class="col-sm-5 col-md-5  col-xs-5 col-lg-5">
+										<input type="text" class="form-control input-sm" id="ephoneNumber" value="phoneNumber"  style="height: 25px;width:125%;"></input>
+									 </div>						 
+								  </div>				
+								</div>
+								<div class="row" style="margin-top:8px;">
+								  <div class="col-sm-12 col-md-12 col-xs-12 col-lg-12">
+									<div class="col-sm-3 col-md-5  col-xs-5 col-lg-2">
+										<label class="proname">Email</label>
+									 </div>
+									 <div class="col-sm-2 col-md-2  col-xs-2 col-lg-1">
+										<label class="name">:</label>
+									 </div>
+									 <div class="col-sm-5 col-md-5  col-xs-5 col-lg-5">
+										<input type="text" class="form-control input-sm" id="eemail" value="email"  style="height: 25px;width:125%;"></input>
+									 </div>						 
+								  </div>				
+								</div>
+								<div class="row" style="margin-top:8px;">
+								  <div class="col-sm-12 col-md-12 col-xs-12 col-lg-12">
+									<div class="col-sm-3 col-md-5  col-xs-5 col-lg-2">
+										<label class="proname">Country</label>
+									 </div>
+									 <div class="col-sm-2 col-md-2  col-xs-2 col-lg-1">
+										<label class="name">:</label>
+									 </div>
+									 <div class="col-sm-5 col-md-5  col-xs-5 col-lg-5">
+										<select class="form-control" id="ecountry" value="selectedCountry"  style="height: 30px;width:125%;">
+											<option value="">-- Select Country --</option>
+									   </select> 
+									 </div>	
+									 <p class="perror" id="countryerror"></p>
+								  </div>				
+								</div>						
+							  </div>
+							  <div class="modal-footer">
+									<button type="button" class="btn btn-primary" onclick="profileback()">Back</button>
+									<button type="button" class="btn btn-primary" onclick="profileUpdate()">Update</button>
+							  </div>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<div class="modal" tabindex="-1" role="dialog" style="margin-top:30%;height:100%">
+					<div class="modal-dialog" role="document">
+						<div class="modal-content">
+							<div class="modal-header"> 
+								<button type="button" id="close" onclick="onCloseHandled()">
+									<span aria-hidden="true"><i class="fa fa-times"></i></span>
+								</button>							
+								<h4 class="modal-title">Confirmation</h4>
+							</div>
+							<div class="modal-body">
+								<p>Profile Information was successfully updated...</p>
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-default" class="success" onclick="onCloseHandled()" >Close</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				
+			</section>
+		  </div>
+		  <!-- /.content-wrapper -->
+		 
+		</div>
+		<!-- ./wrapper -->
+
+		<!-- jQuery 3 -->
+		<script src="bower_components/jquery/dist/jquery.min.js"></script>
+		<!-- AdminLTE App -->
+		<script src="dist/js/adminlte.min.js"></script>
+		<script src="resource/js/bootstrap.min.js"></script>
+		<script src="resource/js/bootstrapDialog.js"></script>
+		<!-- <script src="resource/js/jquery.min.js "></script> -->
+		<script src="resource/js/responsive.bootstrap.min.js"></script>
+		<script src="js/myprofile.js"></script>
+	</body>
+</html>

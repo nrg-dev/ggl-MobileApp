@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>Member | Dashboard</title>
+		<!-- Tell the browser to be responsive to screen width -->
+		<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+		<!-- Bootstrap 3.3.7 -->
+		<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+		<!-- Font Awesome -->
+		<link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
+		<!-- Theme style -->
+		<link rel="stylesheet" href="dist/css/AdminLTE.min.css">
+		<link rel="stylesheet" href="dist/css/skins/_all-skins.min.css">
+		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="css/text.css">
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" href="resource/css/bootstrap.min.css">
+	  <!-- Google Font -->
+	</head>
+	<body class="hold-transition skin-blue sidebar-mini">
+		<div class="wrapper" style="cursor:pointer;">
+
+		  <header class="main-header">
+			<a href="dashboard.html" class="logo">
+			  <span class="logo-mini"><b>User</b></span>
+			  <span class="logo-lg"><b>Member</b></span>
+			</a>
+			<nav class="navbar navbar-static-top">
+			  <!-- Sidebar toggle button-->
+			  <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+				<span class="sr-only">Toggle navigation</span>
+			  </a>
+			</nav>
+		  </header>
+		  <!-- Left side column. contains the logo and sidebar -->
+		  <aside class="main-sidebar">
+			<!-- sidebar: style can be found in sidebar.less -->
+			<section class="sidebar">
+			  <!-- Sidebar user panel -->
+			  <div class="user-panel" onclick="getCompanyList()">
+				<div class="pull-left image">
+				  <img src="images/home.png" class="img-circle" alt="User Image">
+				</div>
+				<div class="pull-left info">
+				  <p>Member Home</p>
+				  <a><i class="fa fa-circle text-success"></i> Online</a>
+				</div>
+			  </div>
+			  <!-- search form -->
+			  <form action="#" method="get" class="sidebar-form">
+				<div class="input-group">
+				  <input type="text" name="q" class="form-control" placeholder="Search...">
+				  <span class="input-group-btn">
+						<button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
+						</button>
+					  </span>
+				</div>
+			  </form>
+			  <!-- /.search form -->
+			  <ul class="sidebar-menu" data-widget="tree">
+				<!-- <li class="header">MAIN NAVIGATION</li> -->
+				<li>
+				  <a href="MyProfile.html">
+					<i class="fa fa-user-md"></i> <span>My Profile</span>       
+				  </a>
+				</li>
+				<li>
+				  <a href="Withdraw.html">
+					<i class="fa fa-money"></i> <span>Withdraw</span>   
+				  </a>
+				</li>
+				<li>
+				  <a href="MyMember.html">
+					<i class="fa fa-users"></i> <span>My GLG Member</span>   
+				  </a>
+				</li>
+				<li class="treeview">
+				  <a href="#">
+					<i class="fa fa-sort-amount-desc"></i> <span>Investment</span>
+					<span class="pull-right-container">
+					  <i class="fa fa-angle-left pull-right"></i>
+					</span>
+				  </a>
+				  <ul class="treeview-menu">
+					<li><a href="purchaseUnit.html"><i class="fa fa-shopping-cart"></i> Purchase Unit </a></li>
+					<li><a href="myStatus.html"><i class="fa fa-address-book"></i> My Status </a></li>
+					<li><a href="memberPayment.html"><i class="fa fa-shopping-cart"></i> Payment Options </a></li>
+					<li><a href="investment-paymentupload.html"><i class="fa fa-shopping-cart"></i> Upload Payment </a></li>
+				  </ul>
+				</li>
+				<li class="treeview">
+				  <a href="#">
+					<i class="fa fa-list-ul"></i> <span>Booking</span>
+					<span class="pull-right-container">
+					  <i class="fa fa-angle-left pull-right"></i>
+					</span>
+				  </a>
+				  <ul class="treeview-menu">
+					<li><a href="MyBooking.html"><i class="fa fa-table"></i> My Booking </a></li>
+				  </ul>
+				</li>
+				<li>
+				  <a href="index.html">
+					<i class="fa fa-sign-out"></i> <span>Log Out</span>   
+				  </a>
+				</li>
+			  </ul>
+			</section>
+			<!-- /.sidebar -->
+		  </aside>
+
+		  <!-- Content Wrapper. Contains page content -->
+		  <br/><br/><br/><br/><br/>
+		  <div class="content-wrapper" style="height:1650px;">
+			<section class="content-header">
+				<div class="section">
+					<div class="container">
+						<div class="row">
+							<div class="product product-details clearfix">
+								<div class="col-md-12 col-lg-4 col-sm-12 col-xs-12">
+								
+									<!-- div 0 Starting -->
+									<div class="product-body" id="div0">
+										<div class="col-sm-7 col-md-12 col-xs-12 col-lg-12">
+											<h2><center><b>Package Plan</b></center></h2>
+											<h4><center><b>Choose a type of Category that works for you</b></center></h4>
+											<br/>
+										</div>
+										<div class="col-sm-7 col-md-12 col-xs-12 col-lg-12">
+											<div class="panel panel-default text-center">
+											  <div class="panel-heading">
+												<h1>Public Tree</h1>
+											  </div>
+											  <div class="panel-body">
+											  
+											  </div>
+											  <div class="panel-footer" style="background-color: #efe7e7 !important;">
+												<button onclick="selectPublic()" id="selectPublic" class="btn btn-lg">Process</button>
+											  </div>
+											</div>      
+										</div>  
+										<div class="col-sm-7 col-md-12 col-xs-12 col-lg-12">
+											<div class="panel panel-default text-center">
+											  <div class="panel-heading">
+												<h1>Own Tree</h1>
+											  </div>
+											  <div class="panel-body">
+											  
+											  </div>
+											  <div class="panel-footer" style="background-color: #efe7e7 !important;">
+												 <button onclick="selectOwnTree()" id="selectOwnTree" class="btn btn-lg">Process</button>
+											  </div>
+											</div>      
+										</div>  
+
+										<div class="col-sm-7 col-md-12 col-xs-12 col-lg-12">
+											<div class="panel panel-default text-center">
+											  <div class="panel-heading">
+												<h1>Private Tree</h1>
+											  </div>
+											  <div class="panel-body">
+											  
+											  </div>
+											  <div class="panel-footer" style="background-color: #efe7e7 !important;">
+												<button onclick="selectPrivate()" id="selectPrivate" class="btn btn-lg">Process</button>
+											  </div>
+											</div>      
+										</div>  
+									</div>
+									<!-- div 0 Ending -->
+									
+									<!-- div 1 Starting -->
+									<div class="product-body" id="div1">
+										<a onclick="homePage()" class="previous">&laquo; Previous</a>
+										<div class="text-center">
+											<h2>Public Tree Package Plan</h2>
+										</div>
+										
+										<div id="test2" class="col-sm-4 col-xs-12">
+											<div class="panel panel-default text-center">
+												<div class="panel-heading">
+													<h1>1 Unit</h1>
+												</div>
+												<div class="panel-footer">
+													<h3>100 SGD</h3>
+												<button onclick="createPublicUnit(1)" id="singleUnit">Order</button>
+												</div>
+											</div>      
+										</div> 
+										
+										<div class="col-sm-4 col-xs-12">
+											<div class="panel panel-default text-center">
+												<div class="panel-heading">
+													<h1>2 Units</h1>
+												</div>
+												<div class="panel-footer">
+													<h3>200 SGD</h3>
+													<button onclick="createPublicUnit(2)" id="threeUnit">Order</button>
+												</div>
+											</div>      
+										</div> 
+										
+										<div id="test3" class="col-sm-4 col-xs-12">
+											<div class="panel panel-default text-center">
+												<div class="panel-heading">
+												  <h1>3 Units</h1>
+												</div>
+											   
+												<div class="panel-footer">
+												  <h3>300 SGD</h3>
+												  <button onclick="createPublicUnit(3)" id="threeUnit" >Order</button>
+												</div>
+											</div>      
+										</div>  
+										
+										<div id="test4" class="col-sm-4 col-xs-12">
+											<div class="panel panel-default text-center">
+												<div class="panel-heading">
+												  <h1>4 Units</h1>
+												</div>
+												
+												<div class="panel-footer">
+												  <h3>400 SGD</h3>
+												  <button onclick="createPublicUnit(4)" id="fourUnit">Order</button>
+												</div>
+										  </div>      
+										</div>  
+
+										<div id="test5" class="col-sm-4 col-xs-12">
+											<div class="panel panel-default text-center">
+												<div class="panel-heading">
+												  <h1>5 Units</h1>
+												</div>
+												
+												<div class="panel-footer">
+												  <h3>500 SGD</h3>
+												  <button onclick="createPublicUnit(5)" id="fiveUnits" >Order</button>
+												</div>
+											</div>    
+										</div>									 
+									</div>
+									<!-- div 1 Ending -->
+									
+									<!-- div2 Starting -->
+									<div id="div2">
+										<a onclick="homePage()" class="previous">&laquo; Previous</a>
+										<div class="text-center">
+											<h2>Own Tree Package Plan</h2>
+										</div>
+
+										<div id="test2" class="col-sm-4 col-xs-12">
+											<div class="panel panel-default text-center">
+											  <div class="panel-heading">
+												<h1>1 Unit</h1>
+											  </div>
+											 
+											  <div class="panel-footer">
+												<h3>100 SGD</h3>
+												<button onclick="createOwnTree(1)" id="singleUnit">Create New Tree</button>
+
+
+											  </div>
+											</div>      
+										</div>     
+
+										<div  class="col-sm-4 col-xs-12">
+											<div class="panel panel-default text-center">
+												<div class="panel-heading">
+												  <h1>2 Units</h1>
+												</div>
+											   
+												<div class="panel-footer">
+												  <h3>200 SGD</h3>
+												  <button onclick="createOwnTree(2)" id="threeUnit">Create New Tree</button>
+												</div>
+											</div>      
+										</div>  
+
+
+
+
+										<div id="test3" class="col-sm-4 col-xs-12">
+											<div class="panel panel-default text-center">
+											  <div class="panel-heading">
+												<h1>3 Units</h1>
+											  </div>
+											 
+											  <div class="panel-footer">
+												<h3>300 SGD</h3>
+												<button onclick="createOwnTree(3)" id="threeUnit" >Create New Tree</button>
+											  </div>
+											</div>      
+										</div>  
+
+
+										<div id="test4" class="col-sm-4 col-xs-12">
+											<div class="panel panel-default text-center">
+											  <div class="panel-heading">
+												<h1>4 Units</h1>
+											  </div>
+											  
+											  <div class="panel-footer">
+												<h3>400 SGD</h3>
+												<button onclick="createOwnTree(4)" id="fourUnit">Create New Tree</button>
+											  </div>
+											</div>      
+										</div>  
+
+
+
+										<div id="test5" class="col-sm-4 col-xs-12">
+											<div class="panel panel-default text-center">
+											  <div class="panel-heading">
+												<h1>5 Units</h1>
+											  </div>
+											  
+											  <div class="panel-footer">
+												<h3>500 SGD</h3>
+												<button onclick="createOwnTree(5)" id="fiveUnits">Create New Tree</button>
+											  </div>
+											</div>      
+										</div>  
+
+
+
+										<div id="test6" class="col-sm-4 col-xs-12">
+											<div class="panel panel-default text-center">
+												<div class="panel-heading">
+													<h1>More Units</h1>
+												</div>
+												  
+												<div class="panel-footer">
+													<h3> SGD</h3>
+													<button onclick="createOwnTree()" id="moreUnits" >Create New Tree</button>
+												</div>
+											</div>      
+										</div> 
+									</div>
+									<!-- div 2 Starting -->
+									
+									<!-- div 3 starting -->
+									 <div id="div3">
+										<div class="col-sm-4 col-xs-12">
+											<a onclick="homePage()" class="previous">&laquo; Previous</a>
+										</div>
+										<br/>
+										<div class="col-md-6 col-md-offset-3">
+											<h3>Private Tree Form </h3>    
+											<br/>
+											<div class="form-group">
+												<label>Own Tree Number *</label>
+												<input type="text" class="form-control" placeholder="Eg-GSP10" id ="owntreenumber" onchange="getTreeName()" required />
+												<p class="perror" id="owntreenumbererror"></p>	
+											</div>
+
+											<div class="form-group">
+												<label for="state">Number of Units *</label>            
+												<select class="form-control" id="numberofunits" value="numberofUnit" required>
+													<option value=""></option>
+													<option value="1">1</option>
+													<option value="2">2</option>
+													<option value="3">3</option>
+													<option value="4">4</option>
+													<option value="5">5</option>
+												</select>
+											</div>
+											<p class="perror" id="numberofunitseerror"></p>	
+											<div class="form-group">
+											  <button onclick="privateTree()" class="btn btn-primary">Order</button>
+											</div>
+										</div>
+									</div>
+									<!-- div 3 Ending -->
+									
+									<!-- div 6 Starting -->
+									<div class="product-body" id="div6">
+										<div class="col-sm-4 col-xs-12">
+											<a onclick="selectPublic()" class="previous">&laquo; Previous</a>
+											<br/><br/>
+											<div class="panel-heading">
+												<h4 style="font-size: 22px;">Public Tree | Unit Invoice</h4>
+											</div>
+											<div class="panel-footer">
+												<ul data-role="listview" data-inset="true" id="publictreeview" class="w3-card-8" data-input="#filterTable-input" data-filter="true">
+												
+												<!-- <label>   Thank you for buy the Unit from GGL Investment:</label>	
+												<ul data-role="listview" data-inset="true" id="publictreeview" class="w3-card-8" data-input="#filterTable-input" data-filter="true">
+												<div class="col-sm-4 col-xs-6">
+													<label>  Amount Details :	</label> 
+												</div>
+												<div class="col-sm-4 col-xs-2">
+													<output id="totalAmount" style="font-weight: bold;"></output>
+												</div>
+												<div class="col-sm-4 col-xs-4">
+													<label>  SGD </label> 
+												</div>
+												  Note
+												  Please make the payment via Wire transfer or Online payment 
+												  
+												  
+												  For and on behalf of
+												  Global Gains Limited -->
+
+											</div>
+											<button onclick="donePublic()" id="singleUnit" style="width: inherit;" class="btn btn-lg">Done</button>
+										 </div>  
+									</div>
+									<!-- div 6 Ending -->
+									
+									<!-- div 7 Starting -->
+									<div id="div7">
+										<div  class="col-sm-4 col-xs-12">
+											<a onclick="selectOwnTree()" class="previous">&laquo; Previous</a>
+											<br/><br/>
+											<div class="panel-heading">
+											  <h4 style="font-size: 22px;">Own Tree | Unit Invoice</h4>
+											</div>
+											
+											<div class="panel-footer">
+												<ul data-role="listview" data-inset="true" id="owntreeview" class="w3-card-8" data-input="#filterTable-input" data-filter="true">
+												<!-- <label>   Thank you for buy the Unit from GGL Investement:</label>
+												<h3 style="color: #9C27B0;">  Tree Name #: {{ this.model.treeName }} </h3>
+												<div *ngFor="let invoice of invoiceList">	
+													<h3>  Unit Invoice Number #: {{ invoice.invoiceNumber }} </h3>
+												</div>  
+												<label>  Amount Details : {{ this.model.totalAmount }}  SGD </label>
+												
+												Note
+												Please make the payment via Wire transfer or Online payment 
+												
+												For and on behalf of
+												Global Gains Limited -->			
+											</div>
+											<button onclick="doneOwnTree()" id="singleUnit" style="width: inherit;" class="btn btn-lg">Done</button>
+										</div>  
+											
+									</div>
+									<!-- div 7 Ending -->
+									
+									<!-- div 8 Starting -->
+									<div id="div8">
+										<div class="col-sm-4 col-xs-12">
+											<a onclick="selectPrivate()" class="previous">&laquo; Previous</a>
+											<br/><br/>
+											<div class="panel-heading">
+											  <h4 style="font-size: 22px;">Private Tree | Unit Invoice</h4>
+											</div>
+											
+											<div class="panel-footer">
+												<ul data-role="listview" data-inset="true" id="privatetreeview" class="w3-card-8" data-input="#filterTable-input" data-filter="true">
+											</div>
+											<button onclick="donePrivateTree()" id="backToPrivate" style="width: inherit;" class="btn btn-lg">Done</button>
+										</div>  	
+									</div>	  
+									<!-- div 8 Ending -->
+										
+								</div>							
+							</div>
+							<br/>
+						</div>
+						
+						<!-- Ajax Loader Starting -->
+						<div class="ajax-loader">
+							<img src="images/loader.gif" class="img-responsive" style="left:45%;position:absolute;margin-top:35%;" />
+						</div>
+						<!-- Ajax Loader Ending -->
+					</div>
+				</div>
+				
+			</section>
+		  </div>
+		  <!-- /.content-wrapper -->
+		 
+		</div>
+		<!-- ./wrapper -->
+
+		<!-- jQuery 3 -->
+		<script src="bower_components/jquery/dist/jquery.min.js"></script>
+		<!-- AdminLTE App -->
+		<script src="dist/js/adminlte.min.js"></script>
+		<script src="resource/js/bootstrap.min.js"></script>
+		<script src="resource/js/bootstrapDialog.js"></script>
+		<script src="resource/js/responsive.bootstrap.min.js"></script>
+		<script src="js/purchaseUnit.js"></script>
+	</body>
+</html>

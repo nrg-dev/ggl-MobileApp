@@ -1,0 +1,225 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<script src="resource/js/jquery.min.js "></script>
+		<script src="resource/js/ajaxJquery.min.js"></script>
+		<script src="resource/js/jquery-1.11.1.min.js"></script>
+		<link rel="stylesheet" href="resource/css/bootstrap.min.css">
+		<script src="resource/js/bootstrap.min.js"></script>
+		<link rel="stylesheet" href="css/common.css" />
+		<link rel="stylesheet" href="resource/font-awesome-4.7.0/css/font-awesome.min.css" />
+		<link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css ">
+		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js "></script> 
+		<script src="resource/js/bootstrapDialog.js "></script>
+		<link rel="stylesheet" href="css/home.css">
+		<script src="js/register.js "></script>
+	</head>
+	<body>
+		<div class="col-md-6 col-md-offset-3" style="margin-top: 40px;margin-left: 10px;margin-right: 10px;">
+			<div data-role="header" id="header" class="w3-card-2">
+				<table style="width:100%">
+					<tr>
+						<td> 
+							<img src="images/logo.jpg" style="width:60px;height:60px;margin-top:3px;margin-left:3px;" class="imagecontainer"></img>
+						</td>
+						<td>
+							<h1 style="margin-top:7px;font-size:14px;color:white;margin-left: 45px;">
+								<b>GGL</b>
+							</h1>
+						</td>
+						<td></td>
+												
+					</tr>
+				</table> 
+			</div>
+			<br/>
+			<div class="col-sm-8 col-sm-offset-2" style="font-size:30px;"><center><h2>Register Form</h2></center>
+			<div class="panel-body">
+				<!-- Dialog Box Start -->
+						<div data-role="popup" id="MemberValid">
+							<p class="alert-danger" >Member ID is available.</p>
+						</div>
+						
+						<div data-role="popup" id="MemberNotValid">
+							<p class="alert-danger" >Member ID is Not Available.Please enter valid memberID.</p>
+						</div>
+						<!-- Dialog Box End -->
+				<div class="container-fluid">
+					<form name="form"  style="margin-top:10px;">
+						<div class="row">
+							<table>
+								<!-- 1 row -->
+								<tr>
+									<td>
+										<div class="form-group">
+											<label for="refmemberID">Ref.memberID*</label>
+											<input type="text" class="form-control" placeholder="Eg-GLGP600800" id="refmemberID" onchange="getMemberIDValidate(refmemberID)" />
+										</div>
+										<p class="perror" id="memberiderror"></p>
+									</td>
+									<td width="40px;"></td>
+									<td> 
+										 <div class="form-group">
+											<label for="emailID">Email ID</label>
+											<input type="text" class="form-control" id="email"></input>
+										</div>
+										<p class="perror" id="emailerror"></p>									
+									</td>
+								</tr>
+								<!-- 2 row  -->
+								<tr>
+									<td>
+										<div class="form-group">
+											<label for="selectedCountry">Country</label>
+											<select class="form-control" id="selectedCountry">
+												<option value="">-- Select Country --</option>
+										   </select>	
+											<!-- <select class="form-control" name="selectedCountry" id="selectedCountry"
+													data-theme="a" onchange="country()">
+													<option value="">-- Select Country --</option>
+											</select> -->									   
+										</div>
+										<p class="perror" id="countryerror"></p>
+									</td>
+									<td width="40px;"></td>
+									<td> 
+										<div class="form-group">
+											 <label for="phonenumber">Phone Number</label>
+											 <input type="text" class="form-control" placeholder="Eg-8870477654" name="phoneNumber" id="phoneNumber" required />
+										</div>
+										<p class="perror" id="phoneNumbererror"></p>
+									</td>
+								</tr>
+							   <!-- 3 row start -->
+								<tr> 
+									<td>
+										<div class="form-group">
+										   <label for="firstName">First Name</label>
+										   <input type="text" class="form-control" placeholder="Eg-MARC" name="firstName" id="firstName" required />
+										</div>
+										<p class="perror" id="firstNameerror"></p>
+									</td>   
+									<td width="40px;"></td>
+									<td> 
+										<div class="form-group">
+											<label for="lastName">Last Name</label>
+											<input type="text" class="form-control" placeholder="Eg-Jacob" name="lastName" id="lastName" required />
+										</div>	
+										<p class="perror" id="lastNameerror"></p>						
+									</td>
+								</tr>     
+								<!-- 4 row end -->       
+								<tr>
+									<td>  
+										<div class="form-group">
+											<label for="username">Username</label>
+											<input type="text" class="form-control" placeholder="Eg-Alex" name="username" id="username" required />
+										</div>
+										<p class="perror" id="usernameerror"></p>	
+									</td>
+									<td width="40px;"></td> 
+									<td> 
+										<div class="form-group">
+											  <label for="password">Password</label>
+											  <input type="password" class="form-control" name="password" id="password" required />
+										 </div>
+										 <p class="perror" id="passworderror"></p>
+									 </td>
+								<tr>       
+								<!-- 5 row end -->        
+								<tr>
+									<td>   
+										<div class="form-group">
+											<label for="bankName">Bank Name</label>
+											<input type="text" class="form-control" placeholder="Eg-HSBC" name="bankName" id="bankName" required />
+										</div>
+										<p class="perror" id="bankNameerror"></p>
+									</td>
+									<td width="40px;"></td> 
+									<td> 
+										<div class="form-group">
+											  <label for="bankAcctNumber">Account No*</label>
+											  <input type="text" class="form-control" placeholder="Eg-100123454323" name="bankAcctNumber"  id="bankAcctNumber" required />
+										 </div>
+										 <p class="perror" id="bankAcctNumbererror"></p>
+									  </td>
+									<tr>    
+								</table>   
+								<div class="form-group" style="font-size: 15px;">
+									<textarea id="agreement" style="height: 700px;" readonly> 
+									 Terms & Conditions
+										1 Introduction
+											Thank you for choosing our GSP program. This program is provided by Global Gains Limited. 
+											This Terms & Conditions govern you on participating on our programs. By participating in the Program, you agree to the Terms and Conditions and the Privacy Policy.
+												
+										2 Definition & Interpretation
+											a.	Global Save PartnershipisA program where partners can participate in portfoliosmanaged by Global Gains Limited; 
+											b.	Partner	is A person who participate on the program;
+											c.	Deposit	 is A fund that used to participate in the program;
+											d.	Reward	is A incentives to partner whom has completed the program
+										3 Eligible Users
+											In order to access and use the Website and avail of any Facility, you must be an individual of legal age who can enter into legally binding contracts under applicable law or a corporation, association of persons or firm whom can enter into legally binding contracts under applicable law. In case of a corporation, association of persons or a firm, you must be authorized to agree to the Terms and Conditions and to access, use and avail of the Website and the Facilities. 
+										4 Registration 
+											You agree -
+											a.to provide true, accurate, current and complete information about yourself as prompted by the registration form, and 
+											b.	to inform time to time maintain and update this information to keep it true, accurate, current and complete at all times. 
+											It is your responsibilities to keep Global Gains Limited update of your information when participating our GSP Program If any information provided by you is untrue, inaccurate, noncurrent or incomplete, Global Gains Limited will demand your update.
+											You will be solely and absolutely responsible for maintaining the secrecy and confidentiality of all your IDs and passwords and you will be fully and absolutely responsible and liable for all activities that occur under your ID and password including any unauthorized use or misuse of your ID and/or password
+											Any activity pursuant to use of your ID or Password shall be deemed to be your activity and Global Gains Limited shall have no obligation to verify the authenticity of any such activity. Global Gains Limited shall not be responsible for any mistake or error made by you in keying in the activity. 
+										 5 Liability
+											These Terms and conditions are made by Global Gains Limited. By participating in the GSP Program, you agree to and are bound by the Program Terms and Conditions. If you do not wish to agree to and abide by the Program Terms and Conditions in their entirety, you are not authorized to participate in the Program.
+											By participating in the Program, Partners release Global Gains Limited, from any and all liability for any loss, harm, damages, cost, or expense, arising out of or in any way connected to the Program and/or the use of any Program rewards.
+											Upon Participate and made your registration with us in our GSP program, it is your responsibilities to made the GSP Program Deposit within 7 days from your date of registrations. Global Gains Ltd has the right to suspend your registration if we did not receive your GSP Program Deposit.
+											You are aware that your GSP Program Deposit is refundable ONLY upon completions of the program, Global Gains Ltd provide NO TIME FRAME for your completion of the program. 
+										6 Severability
+											If any provision of the Terms and Conditions shall be held to be invalid or unenforceable by reason of any law or any rule, the validity of the remaining provisions and conditions shall not be affected thereby and these Terms shall be carried out.
+										7 Disclaimer
+											7.1 Computer System
+											Global Gains Limited disclaims any liability for damage to any computer system resulting from participating in, or accessing or downloading information in connection with the Program, and reserve
+											the right, in Global Gains Limited s sole discretion, to cancel, modify, or suspend the Program caused by virus, bug, computer problem, unauthorized intervention, or other causes beyond Global Gains Limited s control, corrupt the administration or security.
+											7.2 Force Majeure
+												No party hereto may be asked to responsible for any delay or obstacle to fulfill the obligations under this terms and conditions for any force majeure reason. Force majeure in this terms and conditions shall mean, fire, natural disaster (earthquake, typhoon, flood, thunderbolt), public strike, riot, war, or any other conditions beyond its control.
+											7.3 Reserved Right
+												Partners and prospective partners expressly understand and agree that: 
+												
+										A.	Your use of the program is at your sole risk, the program is provided on an as is and as available basis and the company expressly disclaims all warranties, terms and conditions of any kind, whether express or implied by statute, common law or custom, including, but not limited;
+												
+											B.	Global Gains Limited will try to fulfill the followings:
+											i.	The program to meet your requirements.
+											ii.	Be uninterrupted, timely, secure, or error-free.
+											iii.The results obtained from the use of the program will be accurate or reliable.
+											iv.	The quality of any products, services, information, or other material obtained by you through the program will meet your expectations;
+											v.	Any errors in the service will be corrected .          
+											C.	Any material downloaded or otherwise obtained through the use of the program is accessed at your own discretion and risk, and you will be solely responsible for any damage to your computer system or mobile device or loss of data that results from the download or use of any such material.  
+											D.	Global Gains Limited has the right to maintain all the data.
+									</textarea>      
+								</div>
+								<div class="form-group" style="font-size: 15px;">
+									<input type="checkbox" name="agree" id="agree" >  I Agree<br>
+								</div>
+								<p class="perror" id="agreementerror"></p>
+
+								<div class="form-group" style="font-size: 15px;">
+									<input type="radio" name="actType" id="silver" value="silver" class="name2"/> Member (10 SGD) <br/>
+									<input type="radio" name="actType" id="gold" value="gold" class="name2"/> Frenschiese (1000 SGD) <br/>
+									<input type="radio" name="actType" id="platinum" value="platinum" class="name2"/> Master Frenschiese (10000 SGD)
+								</div>
+								<p class="perror" id="actTypeerror"></p>
+								<div class="form-group">
+									<button type="button" class="btn btn-primary" onclick="register()">Register</button>
+									<button type="button" class="btn btn-primary" onclick="cancel()">Cancel</button>
+									<!-- <a href="index.html" style="font-size:14px;">Cancel</a>  -->
+								</div>
+								<!-- Modal end -->
+								<div class="ajax-loader">
+									<img src="images/loader.gif" class="img-responsive" />
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+		   </div>
+		</div>
+	</body>
+</html>

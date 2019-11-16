@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>Member | Dashboard</title>
+		<!-- Tell the browser to be responsive to screen width -->
+		<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+		<!-- Bootstrap 3.3.7 -->
+		<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+		<!-- Font Awesome -->
+		<link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
+		<!-- Theme style -->
+		<link rel="stylesheet" href="dist/css/AdminLTE.min.css">
+		<link rel="stylesheet" href="dist/css/skins/_all-skins.min.css">
+		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="css/text.css">
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" href="resource/css/bootstrap.min.css">
+	  <!-- Google Font -->
+	</head>
+	<body class="hold-transition skin-blue sidebar-mini">
+		<div class="wrapper" style="cursor:pointer;">
+
+		  <header class="main-header">
+			<a href="dashboard.html" class="logo">
+			  <span class="logo-mini"><b>User</b></span>
+			  <span class="logo-lg"><b>Member</b></span>
+			</a>
+			<nav class="navbar navbar-static-top">
+			  <!-- Sidebar toggle button-->
+			  <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+				<span class="sr-only">Toggle navigation</span>
+			  </a>
+			</nav>
+		  </header>
+		  <!-- Left side column. contains the logo and sidebar -->
+		  <aside class="main-sidebar">
+			<!-- sidebar: style can be found in sidebar.less -->
+			<section class="sidebar">
+			  <!-- Sidebar user panel -->
+			  <div class="user-panel" onclick="getCompanyList()">
+				<div class="pull-left image">
+				  <img src="images/home.png" class="img-circle" alt="User Image">
+				</div>
+				<div class="pull-left info">
+				  <p>Member Home</p>
+				  <a><i class="fa fa-circle text-success"></i> Online</a>
+				</div>
+			  </div>
+			  <!-- search form -->
+			  <form action="#" method="get" class="sidebar-form">
+				<div class="input-group">
+				  <input type="text" name="q" class="form-control" placeholder="Search...">
+				  <span class="input-group-btn">
+						<button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
+						</button>
+					  </span>
+				</div>
+			  </form>
+			  <!-- /.search form -->
+			  <ul class="sidebar-menu" data-widget="tree">
+				<!-- <li class="header">MAIN NAVIGATION</li> -->
+				<li>
+				  <a href="MyProfile.html">
+					<i class="fa fa-user-md"></i> <span>My Profile</span>       
+				  </a>
+				</li>
+				<li>
+				  <a href="Withdraw.html">
+					<i class="fa fa-money"></i> <span>Withdraw</span>   
+				  </a>
+				</li>
+				<li>
+				  <a href="MyMember.html">
+					<i class="fa fa-users"></i> <span>My GLG Member</span>   
+				  </a>
+				</li>
+				<li class="treeview">
+				  <a href="#">
+					<i class="fa fa-sort-amount-desc"></i> <span>Investment</span>
+					<span class="pull-right-container">
+					  <i class="fa fa-angle-left pull-right"></i>
+					</span>
+				  </a>
+				  <ul class="treeview-menu">
+					<li><a href="purchaseUnit.html"><i class="fa fa-shopping-cart"></i> Purchase Unit </a></li>
+					<li><a href="myStatus.html"><i class="fa fa-address-book"></i> My Status </a></li>
+					<li><a href="memberPayment.html"><i class="fa fa-shopping-cart"></i> Payment Options </a></li>
+					<li><a href="investment-paymentupload.html"><i class="fa fa-shopping-cart"></i> Upload Payment </a></li>
+				  </ul>
+				</li>
+				<li class="treeview">
+				  <a href="#">
+					<i class="fa fa-list-ul"></i> <span>Booking</span>
+					<span class="pull-right-container">
+					  <i class="fa fa-angle-left pull-right"></i>
+					</span>
+				  </a>
+				  <ul class="treeview-menu">
+					<li><a href="MyBooking.html"><i class="fa fa-table"></i> My Booking </a></li>
+				  </ul>
+				</li>
+				<li>
+				  <a href="index.html">
+					<i class="fa fa-sign-out"></i> <span>Log Out</span>   
+				  </a>
+				</li>
+			  </ul>
+			</section>
+			<!-- /.sidebar -->
+		  </aside>
+
+		  <!-- Content Wrapper. Contains page content -->
+		  <br/><br/><br/><br/><br/>
+		  <div class="content-wrapper">
+			<section class="content-header">
+				<div class="section">
+					<div class="container">
+						<div class="row">
+							<div class="product product-details clearfix">
+								<div class="col-md-12 col-lg-4 col-sm-12 col-xs-12">									
+									<!-- memberHOmeDive Starting -->
+									<div class="product-body" id="memberHOmeDive">
+										<div class="col-sm-7 col-md-12 col-xs-12 col-lg-12">
+											<h2><center><b>My Unit Status Info</b></center></h2>
+											<h4><center><b>Choose a type of Category to See the Status for you</b></center></h4>
+											<br/>
+										</div>
+										<div class="col-sm-7 col-md-12 col-xs-12 col-lg-12">
+											<div class="panel panel-default text-center">
+											  <div class="panel-heading">
+												<h1>Public Tree</h1>
+											  </div>
+											  <div class="panel-body">
+											  
+											  </div>
+											  <div class="panel-footer" style="background-color: #efe7e7 !important;">
+												<button onclick="statusOfPublicTree()" id="publicStatus" class="btn btn-lg">Check</button>
+											  </div>
+											</div>      
+										</div>  
+
+										<div class="col-sm-7 col-md-12 col-xs-12 col-lg-12">
+											<div class="panel panel-default text-center">
+											  <div class="panel-heading">
+												<h1>Private Tree</h1>
+											  </div>
+											  <div class="panel-body">
+											  
+											  </div>
+											  <div class="panel-footer" style="background-color: #efe7e7 !important;">
+												<button onclick="chooseTreeName()" id="privateTreeStatus" class="btn btn-lg">Check</button>
+											  </div>
+											</div>      
+										</div>  
+									</div>
+									<!-- memberHOmeDive Ending -->
+									
+									<!-- div 2 Starting -->
+									<div id="div2">
+										<a onclick="backToMyStatus()" class="previous">&laquo; Previous</a>
+										<br/> <br/>
+										<div class="col-sm-4 col-xs-12">
+											<div class="panel panel-default text-center">
+												<ul data-role="listview" data-inset="true" id="publictreeview" class="w3-card-8" data-input="#filterTable-input" data-filter="true">
+												<!-- <div class="panel-heading">
+												  <h1>Queue No : {{ memberUnit.queueNumber }}</h1>			  
+												</div>
+											
+												<div class="panel-footer">
+													Unit Status:   <label style="font-size: 16px;" >  {{ memberUnit.userstatus }} </label> <br/>
+													Payment Status:    <label style="font-size: 16px;"> {{ memberUnit.paymentStatus }} </label> <br/>
+													Unit ID:   <label style="font-size: 16px;"> {{ memberUnit.invoiceNumber }} </label>
+											
+												</div> -->
+											</div>      
+										</div>  
+									</div>
+									<!-- div 2 Ending -->
+									
+									<!-- div 1 Starting -->
+									<div id="div1">
+										<div class="col-md-6 col-md-offset-3">										  
+											<br/>									 
+											<div class="form-group">
+												<label>Tree Name *</label>    
+												<select class="form-control"  id="treename"  name ="treeName"  required>
+													<option value="">--- Select Tree Name ---</option> 
+												</select>
+												<p class="perror" id="treenameerror"></p>
+											</div>										  
+											<div class="form-group">
+												<button class="btn btn-primary" onclick="statusofPrivateTree()">Search</button>
+											</div>
+										 </div>
+									</div>
+									<!-- div 1 Ending -->
+									
+								</div>							
+							</div>
+							<br/>
+						</div>
+						<!-- Ajax Loader Starting -->
+						<div class="ajax-loader">
+							<img src="images/loader.gif" class="img-responsive" style="left:45%;position:absolute;margin-top:-95%;" />
+						</div>
+						<!-- Ajax Loader Ending -->
+					</div>
+				</div>
+				
+			</section>
+		  </div>
+		  <!-- /.content-wrapper -->
+		 
+		</div>
+		<!-- ./wrapper -->
+
+		<!-- jQuery 3 -->
+		<script src="bower_components/jquery/dist/jquery.min.js"></script>
+		<!-- AdminLTE App -->
+		<script src="dist/js/adminlte.min.js"></script>
+		<script src="resource/js/bootstrap.min.js"></script>
+		<script src="resource/js/bootstrapDialog.js"></script>
+		<script src="resource/js/responsive.bootstrap.min.js"></script>
+		<script src="js/myStatus.js"></script>
+	</body>
+</html>

@@ -1,0 +1,325 @@
+.headerdiv{
+	background-color: #067ab4 ;
+	width:100%;
+	height:50px;
+}
+
+body{
+	padding: 0px;
+    margin: 0px;
+	transition: background-color .5s;
+}
+
+.ui-bar-a, .ui-page-theme-a .ui-bar-inherit, html .ui-bar-a .ui-bar-inherit, html .ui-body-a .ui-bar-inherit, html body .ui-group-theme-a .ui-bar-inherit {
+    /* background-color: #0874bf ! important; */
+    border-color:  #0874bf ! important;
+    font-size: 20px;
+}
+
+.ui-header .ui-title, .ui-footer .ui-title {
+    font-size: 1em;
+    min-height: 1.1em;
+    text-align: center;
+    display: block;
+    margin: 0 30%;
+    padding: .7em 0;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    outline: 0!important;
+	color:white;
+	font-family: sans-serif;
+}
+
+.mainiframe{
+	border: none;
+	width:100%;
+	height:90%;
+	position: absolute;		
+	overflow:auto;
+}
+
+::-webkit-scrollbar{
+  width: 0px ! important;
+}
+
+.mainiframe::-webkit-scrollbar{
+  width: 0px ! important;
+}
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: white;
+    overflow-x: hidden;
+    transition: 0.3s;
+    padding-top: 60px;
+}
+
+.sidenav a {
+   padding: 3px 0px 2px 10px;
+    text-decoration: none;
+    font-size: 12px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover, .offcanvas a:focus{
+    color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+	color: white;
+    top: 0;
+    right: 12px;
+    font-size: 36px;
+    margin-left: 75px;
+}
+
+@media screen and (max-height: 450px) {
+ .sidenav {
+	   height: 100%;
+	   }
+  .sidenav a {
+	font-size: 12px;
+  }
+}
+
+
+.imgcontainer {
+    margin: -60px 0 0px 0px;
+    font-size: 25px;
+    color: white;
+	background:#0874bf;
+	}
+
+.cont {
+    width: 25%;
+    border-radius: 50%;
+	margin-top: 10px;
+	margin-left: 16px;
+}
+
+.aclass{
+	font-size:12px !important;
+	color:black ! important;
+	font-weight: 100 ! important;
+}
+
+.overlay {
+ 	position:absolute;
+	display:none; 
+    /* color with alpha transparency */
+    background-color: rgba(0, 0, 0, 0.7);
+    /* stretch to screen edges */
+    top: 0;
+	left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+ li{
+	display: block ! important;
+} 
+
+.a1class{
+	font-size:12px !important;
+	color:black ! important;
+	font-weight: 100 ! important;
+}
+
+.menudiv{
+	color: #fff!important;
+    background-color: #f44336!important;
+    height: 90px;
+    margin-left: 325px;
+    width: 25%;
+    margin-top: 50px;
+}
+
+@media screen and (max-width: 450px) {
+.menudiv{
+	color: #fff!important;
+    background-color: #f44336!important;
+    height: 75px;
+    margin-left: 95px;
+    width: 50%;
+    margin-top: 50px;
+}
+
+}
+
+.headerp{
+    margin: 10px 0 15px;
+	font-size: 20px;
+    text-align: center;	
+}
+
+.form-control {
+    display: block;
+    width: 100%;
+    height: 30px;
+    padding: 6px 12px;
+    font-size: 12px;
+    line-height: 1.42857143;
+    color: black ! important;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 0px ! important;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+
+.ui-state-highlight, .ui-widget-content .ui-state-highlight, .ui-widget-header .ui-state-highlight {
+    border: 1px solid #0874bf ! important;
+    background: #337ab7 ! important;
+    color: white ! important;
+}
+
+.form-control[disabled], .form-control[readonly], fieldset[disabled] .form-control {
+    background-color: white ! important;
+}
+
+.panel {
+    margin-bottom: 20px;
+    background-color: #fff;
+    border: 1px solid transparent;
+    border-radius: 0px ! important;
+    -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.05);
+    box-shadow: 0 1px 1px rgba(0,0,0,.05);
+}
+
+.panel-heading {
+    padding: 10px 15px;
+    border-bottom: 1px solid transparent;
+     border-top-left-radius: 0px ! important ; 
+     border-top-right-radius:  0px ! important; 
+}
+
+.panel-primary {
+    border-color: #337ab7;
+}
+
+.perror{
+	font-size:12px;
+	color:red;
+}
+
+.modal-header {
+	background:#0874bf ! important;
+	color:white;
+}
+
+.modal-content {
+    position: relative;
+    background-color: #fff;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    border: 1px solid #999;
+    border: 1px solid rgba(0,0,0,.2);
+    border-radius: 0px ! important;
+    outline: 0;
+    -webkit-box-shadow: 0 3px 9px rgba(0,0,0,.5);
+    box-shadow: 0 3px 9px rgba(0,0,0,.5);
+}
+
+.modal-footer {
+    text-align: center;
+    padding: 10px;
+    border-top: 0px ! important;
+}
+
+.btn{
+	border-radius: 4px;
+}
+
+.ajax-loader {
+  visibility: hidden;
+  position: absolute;
+}
+
+.ajax-loader img {
+  position: fixed;
+  top:55%;
+  left: 50%;
+   margin: -105px 0 0 -35px;
+}
+@media (max-width: 640px) {
+	.ajax-loader img{
+		height:50px;
+		position: fixed;
+		top:55%;
+		left: 50%;
+		margin: -105px 0 0 -35px;
+	}	
+}
+
+.faicon{
+	font-size: 20px ! important;
+    /* margin-top: 5px;
+    margin-bottom: -15px;
+    margin-left: 15px; */
+	margin-top: 10px;
+    margin-bottom: -15px;
+    margin-left: 10px;
+}
+
+
+.pagination>li>a, .pagination>li>span {
+    position: relative;
+    float: left;
+    padding: 1px 4px ! important;
+    margin-left: -1px;
+    line-height: 1.42857143;
+    color: #337ab7;
+    text-decoration: none;
+    background-color: #fff;
+    border: 1px solid #ddd;
+}
+
+table.table-bordered.dataTable th, table.table-bordered.dataTable td {
+    border-left-width: 0;
+    text-align: center;
+}
+
+
+.ptag{
+	font-size:12px;
+}
+
+label {
+	display: inline-block;
+	max-width: 100%;
+	margin-bottom: 5px;
+	font-weight: 700;
+	font-size: 13px;
+}
+
+h2{
+ color:blue;	
+}
+
+.footerclass{
+	background:#3b5998;
+    border:#3b5998;
+}
+
+.alert-danger {
+    color: #a94442;
+    background-color: #f2dede;
+    border-color: #ebccd1;
+	font-size: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}

@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>Member | Dashboard</title>
+		<!-- Tell the browser to be responsive to screen width -->
+		<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+		<!-- Bootstrap 3.3.7 -->
+		<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+		<!-- Font Awesome -->
+		<link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
+		<!-- Theme style -->
+		<link rel="stylesheet" href="dist/css/AdminLTE.min.css">
+		<link rel="stylesheet" href="dist/css/skins/_all-skins.min.css">
+		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="css/text.css">
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" href="resource/css/bootstrap.min.css">
+	  <!-- Google Font -->
+	</head>
+	<body class="hold-transition skin-blue sidebar-mini">
+		<div class="wrapper" style="cursor:pointer;">
+
+		  <header class="main-header">
+			<a href="dashboard.html" class="logo">
+			  <span class="logo-mini"><b>User</b></span>
+			  <span class="logo-lg"><b>Member</b></span>
+			</a>
+			<nav class="navbar navbar-static-top">
+			  <!-- Sidebar toggle button-->
+			  <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+				<span class="sr-only">Toggle navigation</span>
+			  </a>
+			</nav>
+		  </header>
+		  <!-- Left side column. contains the logo and sidebar -->
+		  <aside class="main-sidebar">
+			<!-- sidebar: style can be found in sidebar.less -->
+			<section class="sidebar">
+			  <!-- Sidebar user panel -->
+			  <div class="user-panel" onclick="getCompanyList()">
+				<div class="pull-left image">
+				  <img src="images/home.png" class="img-circle" alt="User Image">
+				</div>
+				<div class="pull-left info">
+				  <p>Member Home</p>
+				  <a><i class="fa fa-circle text-success"></i> Online</a>
+				</div>
+			  </div>
+			  <!-- search form -->
+			  <form action="#" method="get" class="sidebar-form">
+				<div class="input-group">
+				  <input type="text" name="q" class="form-control" placeholder="Search...">
+				  <span class="input-group-btn">
+						<button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
+						</button>
+					  </span>
+				</div>
+			  </form>
+			  <!-- /.search form -->
+			  <ul class="sidebar-menu" data-widget="tree">
+				<!-- <li class="header">MAIN NAVIGATION</li> -->
+				<li>
+				  <a href="MyProfile.html">
+					<i class="fa fa-user-md"></i> <span>My Profile</span>       
+				  </a>
+				</li>
+				<li>
+				  <a href="Withdraw.html">
+					<i class="fa fa-money"></i> <span>Withdraw</span>   
+				  </a>
+				</li>
+				<li>
+				  <a href="MyMember.html">
+					<i class="fa fa-users"></i> <span>My GLG Member</span>   
+				  </a>
+				</li>
+				<li class="treeview">
+				  <a href="#">
+					<i class="fa fa-sort-amount-desc"></i> <span>Investment</span>
+					<span class="pull-right-container">
+					  <i class="fa fa-angle-left pull-right"></i>
+					</span>
+				  </a>
+				  <ul class="treeview-menu">
+					<li><a href="purchaseUnit.html"><i class="fa fa-shopping-cart"></i> Purchase Unit </a></li>
+					<li><a href="myStatus.html"><i class="fa fa-address-book"></i> My Status </a></li>
+					<li><a href="memberPayment.html"><i class="fa fa-shopping-cart"></i> Payment Options </a></li>
+					<li><a href="investment-paymentupload.html"><i class="fa fa-shopping-cart"></i> Upload Payment </a></li>
+				  </ul>
+				</li>
+				<li class="treeview">
+				  <a href="#">
+					<i class="fa fa-list-ul"></i> <span>Booking</span>
+					<span class="pull-right-container">
+					  <i class="fa fa-angle-left pull-right"></i>
+					</span>
+				  </a>
+				  <ul class="treeview-menu">
+					<li><a href="MyBooking.html"><i class="fa fa-table"></i> My Booking </a></li>
+				  </ul>
+				</li>
+				<li>
+				  <a href="index.html">
+					<i class="fa fa-sign-out"></i> <span>Log Out</span>   
+				  </a>
+				</li>
+			  </ul>
+			</section>
+			<!-- /.sidebar -->
+		  </aside>
+
+		  <!-- Content Wrapper. Contains page content -->
+		  <br/><br/><br/><br/><br/>
+		  <div class="content-wrapper">
+			<section class="content-header">
+				<div class="section">
+					<div class="container">
+						<div class="row">
+							<div class="product product-details clearfix">
+								<div class="col-md-12 col-lg-4 col-sm-12 col-xs-12">
+									<!-- div 3 Starting -->
+									<div class="product-body" id="div3">
+										<div class="col-sm-7 col-md-12 col-xs-12 col-lg-12">
+											<h4><center><b>Choose a payment Type that works for you</b></center></h4>
+											<br/>
+										</div>
+										<div class="col-sm-7 col-md-12 col-xs-12 col-lg-12">
+											<div class="panel panel-default text-center">
+											  <div class="panel-heading">
+												<h1>Wire Transfer</h1>
+											  </div>
+											  <div class="panel-body">
+											  
+											  </div>
+											  <div class="panel-footer" style="background-color: #efe7e7 !important;">
+												<button onclick="wirePayment()" id="wirepay" class="btn btn-lg">Process</button>
+											  </div>
+											</div>      
+										</div>  
+
+										<!-- <div class="col-sm-7 col-md-12 col-xs-12 col-lg-12">
+											<div class="panel panel-default text-center">
+											  <div class="panel-heading">
+												<h1>Online Payment</h1>
+											  </div>
+											  <div class="panel-body">
+											  
+											  </div>
+											  <div class="panel-footer" style="background-color: #efe7e7 !important;">
+												<button onclick="onlinePay()" id="twoUnit" class="btn btn-lg">Proccess</button>
+											  </div>
+											</div>      
+										</div> -->			
+									</div>
+									<!-- div 3 Ending -->
+									
+									<!-- div 1 Starting -->
+									<div id="div1">
+										<div class="col-sm-7 col-md-12 col-xs-12 col-lg-12">
+											<a onclick="home()" class="previous">&laquo; Previous</a>
+											<br/><br/>
+											
+											<div>
+											  	<br/>
+												<div class="panel-heading">
+													<h3>Wire Payment Details</h3>
+												</div>
+											  
+												<div class="panel-footer">
+												<!--Bank Account details strat -->
+												<div style="background-color: #eaeaea;border-radius: 12px;margin-right: -10px;margin-left: -10px;">
+												<br/>
+												<div class="row">
+													<div class="col-sm-12 col-md-12 col-xs-12 col-lg-12">
+														<div class="col-sm-5 col-md-5  col-xs-5 col-lg-2">
+															<label>Name of Bank </label>
+														</div>
+														<div class="col-sm-1 col-md-1  col-xs-1 col-lg-1"> 
+															<label> : </label>
+														</div>
+														<div class="col-sm-5 col-md-5  col-xs-5 col-lg-5">
+															<output style="font-size: small;">CIMB NIAGA</output>
+														</div>						 
+													</div>				
+												</div>
+												<div class="row">
+													<div class="col-sm-12 col-md-12 col-xs-12 col-lg-12">
+														<div class="col-sm-5 col-md-5  col-xs-5 col-lg-2">
+															<label>Account Holder </label>
+														</div>
+														<div class="col-sm-1 col-md-1  col-xs-1 col-lg-1"> 
+															<label> : </label>
+														</div>
+														<div class="col-sm-5 col-md-5  col-xs-5 col-lg-5">
+															<output>Blueprint Nusantara Indonesia.</output>
+														</div>						 
+													</div>				
+												</div>
+												<div class="row">
+													<div class="col-sm-12 col-md-12 col-xs-12 col-lg-12">
+														<div class="col-sm-5 col-md-5  col-xs-5 col-lg-2">
+															<label>A/C Number  </label>
+														</div>
+														<div class="col-sm-1 col-md-1  col-xs-1 col-lg-1"> 
+															<label> : </label>
+														</div>
+														<div class="col-sm-5 col-md-5  col-xs-5 col-lg-5">
+															<output>800077326600</output>
+														</div>						 
+													</div>				
+												</div>
+												<div class="row">
+													<div class="col-sm-12 col-md-12 col-xs-12 col-lg-12">
+														<div class="col-sm-5 col-md-5  col-xs-5 col-lg-2">
+															<label>Swift Code  </label>
+														</div>
+														<div class="col-sm-1 col-md-1  col-xs-1 col-lg-1"> 
+															<label> : </label>
+														</div>
+														<div class="col-sm-5 col-md-5  col-xs-5 col-lg-5">
+															<output>BNIAIDJA</output>
+														</div>						 
+													</div>				
+												</div>
+												<div class="row">
+													<div class="col-sm-12 col-md-12 col-xs-12 col-lg-12">
+														<div class="col-sm-5 col-md-5  col-xs-5 col-lg-2">
+															<label>CHIPS UID No  </label>
+														</div>
+														<div class="col-sm-1 col-md-1  col-xs-1 col-lg-1"> 
+															<label> : </label>
+														</div>
+														<div class="col-sm-5 col-md-5  col-xs-5 col-lg-5">
+															<output>84711</output>
+														</div>						 
+													</div>				
+												</div>
+												<div class="row">
+													<div class="col-sm-12 col-md-12 col-xs-12 col-lg-12">
+														<div class="col-sm-5 col-md-5  col-xs-5 col-lg-2">
+															<label>Telex Number </label>
+														</div>
+														<div class="col-sm-1 col-md-1  col-xs-1 col-lg-1"> 
+															<label> : </label>
+														</div>
+														<div class="col-sm-5 col-md-5  col-xs-5 col-lg-5">
+															<output>60875-60877 NAGA HO IA.</output>
+														</div>						 
+													</div>				
+												</div>
+												<div class="row">
+													<div class="col-sm-12 col-md-12 col-xs-12 col-lg-12">
+														<div class="col-sm-5 col-md-5  col-xs-5 col-lg-2">
+															<label>Bank Address </label>
+														</div>
+														<div class="col-sm-1 col-md-1  col-xs-1 col-lg-1"> 
+															<label> : </label>
+														</div>
+														<div class="col-sm-5 col-md-5  col-xs-5 col-lg-5">
+															<output>GrahaNiaga/Niaga Tower JI, Jend.Sudirmankav.    
+															        58, Jakarta 12190.</output>
+														</div>						 
+													</div>				
+												</div><br/>
+											</div>
+											<!--Bank Account details End -->
+													</br></br>
+													<label>   Please find the ACH or wire transfer details given below:</label>
+													<label>   Bank Account Holder: Global Gains Limited.</label>
+													<label>   Bank: DBS Bank </label>
+													<label>   Bank Address: 12 Marina Boulevard, Marina Bay Financial Centre,Tower 3, Singapore 018982 </label>
+													<h3>  Account #: 003-932398-0  ( SGD ) </h3>
+													<label>  Swift Code : DBSSGSG </label>
+													<label>  CHIPS UID Number: 0346756 </label>
+													<label>  Telex Number : RS - 24455 </label>
+												  
+													Note
+													After the deposits were made, kindly e-mail the Bank depositslip to us at ( finance@globalgains.co) . The original deposit slips are to be kept by customer. Should you have any queries, please feel free to contact us through e- mail( admin@globalgains.co ).
+
+													For and on behalf of
+													Global Gains Limited
+
+												  
+												</div>
+												<div class="col-sm-7 col-md-12 col-xs-12 col-lg-12">
+													<button onclick="home()" id="singleUnit" class="btn btn-lg">Cancel</button>
+													<button onclick="paymentUpload()" id="singleUnit" class="btn btn-lg">Upload</button>
+												</div>
+											</div>  
+										</div>  	  
+									</div>
+									<!-- div 1 Ending -->
+									
+									<!-- div 2 Starting -->
+									<div id="div2">
+										<div class="col-sm-7 col-md-12 col-xs-12 col-lg-12">
+											<a onclick="home()" class="previous">&laquo; Previous</a>
+											<div>
+											  	<br/>
+												<div class="panel_body">
+													<div class="container-fluid">
+														<div class="row">
+															<div class="col-sm-12 col-md-12 col-xs-12 col-lg-12">
+																<div class="row" id="box">
+																	<div class="col-md-12 col-xs-12 col-lg-6">
+																		<div class="row">
+																			<div class="col-md-12 col-xs-12 col-sm-12 col-lg-12">
+																				<h3>Billing Address</h3><br/>
+																			</div>
+																		</div>
+																		<div class="row">
+																			<div class="col-md-12 col-xs-12 col-sm-6 col-lg-12">
+																				<label for="fname"><i class="fa fa-user"></i> Full Name</label>
+																			</div>
+																			<div class="col-md-12 col-xs-12 col-sm-6 col-lg-12">
+																				<input type="text" id="fname" name="firstname" class="input" placeholder="John M. Doe">
+																			</div>
+																		</div><br/>
+																		<div class="row">
+																			<div class="col-md-12 col-xs-12 col-sm-6 col-lg-12">
+																				<label for="email"><i class="fa fa-envelope"></i> Email</label>
+																			</div>
+																			<div class="col-md-12 col-xs-12 col-sm-6 col-lg-12">
+																				<input type="text" id="email" name="email" class="input" placeholder="john@example.com">
+																			</div>
+																		</div><br/>
+																		<div class="row">
+																			<div class="col-md-12 col-xs-12 col-sm-6 col-lg-12">
+																				<label for="adr"><i class="fa fa-address-card-o"></i> Address</label>
+																			</div>
+																			<div class="col-md-12 col-xs-12 col-sm-6 col-lg-12">
+																				<input type="text" id="adr" name="address" class="input" placeholder="542 W. 15th Street">
+																			</div>
+																		</div><br/>
+																		<div class="row">
+																			<div class="col-md-12 col-xs-12 col-sm-6 col-lg-12">
+																				<label for="city"><i class="fa fa-institution"></i> City</label>
+																			</div>
+																			<div class="col-md-12 col-xs-12 col-sm-6 col-lg-12">
+																				<input type="text" id="city" name="city" class="input" placeholder="New York">
+																			</div>
+																		</div><br/>
+																		<div class="row">
+																			<div class="col-md-12 col-xs-12 col-sm-6 col-lg-12">
+																				<label for="state">State</label>
+																			</div>
+																			<div class="col-md-12 col-xs-12 col-sm-6 col-lg-12">
+																				<input type="text" id="state" name="state" class="input" placeholder="NY">
+																			</div>
+																		</div><br/>
+																		
+																		<div class="row">
+																			<div class="col-md-12 col-xs-12 col-sm-6 col-lg-12">
+																				<label for="zip">Zip</label>
+																			</div>
+																			<div class="col-md-12 col-xs-12 col-sm-6 col-lg-12">
+																				<input type="text" id="zip" name="zip" class="input" placeholder="10001">
+																			</div>
+																		</div><br/>
+																	</div>
+																	<div class="col-md-12 col-xs-12 col-lg-6">
+																		<div class="row">
+																			<div class="col-md-12 col-xs-12 col-sm-6 col-lg-12">
+																				<h3>Payment Details</h3>
+																			</div>
+																		</div><br/>
+																		<div class="row">
+																			<div class="col-md-12 col-xs-12 col-sm-6 col-lg-12">
+																				<label for="fname">Accepted Cards</label>
+																			</div>
+																			<div class="col-md-12 col-xs-12 col-sm-6 col-lg-12">
+																				<div class="icon-container">
+																					<i class="fa fa-cc-visa" style="color:navy;"></i>
+																					<i class="fa fa-cc-amex" style="color:blue;"></i>
+																					<i class="fa fa-cc-mastercard" style="color:red;"></i>
+																					<i class="fa fa-cc-discover" style="color:orange;"></i>
+																				</div>
+																			</div>
+																		</div><br/>
+																		<div class="row">
+																			<div class="col-md-12 col-xs-12 col-sm-6 col-lg-12">
+																				<label for="cname">Name on Card</label>
+																			</div>
+																			<div class="col-md-12 col-xs-12 col-sm-6 col-lg-12">
+																				<input type="text" id="cname" name="cardname" class="input" placeholder="John More Doe">
+																			</div>
+																		</div><br/>
+																		<div class="row">
+																			<div class="col-md-12 col-xs-12 col-sm-6 col-lg-12">
+																				<label for="ccnum">Credit card number</label>
+																			</div>
+																			<div class="col-md-12 col-xs-12 col-sm-6 col-lg-12">
+																				<input type="text" id="ccnum" name="cardnumber" class="input" placeholder="1111-2222-3333-4444">
+																			</div>
+																		</div><br/>
+																		<div class="row">
+																			<div class="col-md-12 col-xs-12 col-sm-6 col-lg-12">
+																				<label for="expmonth">Exp Month</label>
+																			</div>
+																			<div class="col-md-12 col-xs-12 col-sm-6 col-lg-12">
+																				<input type="text" id="expmonth" name="expmonth" class="input" placeholder="September">
+																			</div>
+																		</div><br/>
+																		<div class="row">
+																			<div class="col-md-12 col-xs-12 col-sm-6 col-lg-12">
+																				<label for="expyear">Exp Year</label>
+																			</div>
+																			<div class="col-md-12 col-xs-12 col-sm-6 col-lg-12">
+																				<input type="text" id="expyear" name="expyear" class="input" placeholder="2018">
+																			</div>
+																		</div><br/>
+																		<div class="row">
+																			<div class="col-md-12 col-xs-12 col-sm-6 col-lg-12">
+																				<label for="cvv">CVV</label>
+																			</div>
+																			<div class="col-md-12 col-xs-12 col-sm-6 col-lg-12">
+																				<input type="text" id="cvv" name="cvv" class="input" placeholder="352">
+																			</div>
+																		</div><br/>
+																	</div>
+																	
+																	<div class="col-md-12 col-xs-12 col-sm-6 col-lg-8">
+																		<label>
+																			<input type="checkbox" checked="checked" name="sameadr"> Shipping address same as billing
+																		</label>
+																		<input type="submit" onclick="submit()" value="Continue to checkout" class="btn" style="background-color:#4CAF50;color:white;">
+																		<input type="submit" onclick="home('none')" value="Cancel" class="btn" style="background-color:#4CAF50;color:white;">
+																	</div>
+																	<div class="col-md-12 col-xs-12 col-sm-6 col-lg-12" style="color:white;">Check All Details</div>
+																	<br/>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>  
+										</div>  	  
+									</div>
+									<!-- div 2 Ending -->
+									
+								</div>							
+							</div>
+							<br/>
+						</div>
+					</div>
+				</div>
+				
+			</section>
+		  </div>
+		  <!-- /.content-wrapper -->
+		 
+		</div>
+		<!-- ./wrapper -->
+
+		<!-- jQuery 3 -->
+		<script src="bower_components/jquery/dist/jquery.min.js"></script>
+		<script src="dist/js/adminlte.min.js"></script>
+		<script src="resource/js/bootstrap.min.js"></script>
+		<script src="resource/js/bootstrapDialog.js"></script>
+		<script src="resource/js/responsive.bootstrap.min.js"></script>
+		<script src="js/memberPayment.js"></script>
+	</body>
+</html>

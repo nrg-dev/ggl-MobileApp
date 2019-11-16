@@ -1,0 +1,91 @@
+/* Mobile Responsive */
+
+@media (min-width: 320px) and (max-width: 330px) {
+	#agreement{
+		width:100%;
+	}
+}
+
+@media (min-width: 331px) and (max-width: 410px) {
+	#agreement{
+		width:100%;
+	}
+}	
+
+/* Phablets Responsive */
+
+@media (min-width: 411px) and (max-width: 470px) {
+	#agreement{
+		width:99%;
+	}
+}
+
+@media (min-width: 471px) and (max-width: 480px) {
+	#agreement{
+		width: 81%;
+	}
+}
+
+@media (min-width: 481px) and (max-width: 520px) {
+	#agreement{
+		width:100%;
+	}
+}	
+
+@media (min-width: 521px) and (max-width: 530px) {
+	#agreement{
+		width:100%;
+	}
+}
+
+/* Tablets Responsive */
+
+@media (min-width: 531px) and (max-width: 539px) {
+	#agreement{
+		width:65%;
+	}
+}
+
+@media (min-width: 540px) and (max-width: 767px) {
+	#agreement{
+		width: 61%;
+	}
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+	#agreement{
+		width:100%;
+	}
+}
+
+@media (min-width: 768px) and (max-width: 990px) and (orientation: landscape) {
+	#agreement{
+		width: 72%;
+	}
+}
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+	#agreement{
+		width: 69%;
+	}
+}
+
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+	#agreement{
+		width:65%;
+	}
+}
+
+/* Desktop Responsive */
+
+@media (min-width: 1281px) {
+	#agreement{
+		width:65%;
+	}
+}
+
+.main-sidebar {
+ position: fixed;
+}
+
+
